@@ -4,9 +4,10 @@ const chalk = require("chalk");
 const pokemons = require('json-pokemon');
 const  port = 80;
 
-let result = {"error": "id/name not found"};
-
 App.get("/id/:id", (req,res) => {
+
+    let result = {"error": "id/name not found"};
+
     pokemons.forEach((value) => {
         if(value.id == req.params.id) {
             res.send(value);
@@ -23,6 +24,9 @@ App.get("/id/:id", (req,res) => {
 });
 
 App.get("/name/:name", (req,res) => {
+    
+    let result = {"error": "id/name not found"};
+
     pokemons.forEach((value) => {
         if(value.name == req.params.name) {
             res.send(value);
