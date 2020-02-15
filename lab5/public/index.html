@@ -1,0 +1,61 @@
+<html
+><body>
+    <script>
+        function readID(event) {
+            event.preventDefault();
+
+            let element = document.querySelector("#pokemonId");
+
+            fetch("/id/" + element.value)
+            .then((res) => {
+
+                return res.json();
+            })
+            .then((processed) => {
+                let reporting = document.querySelector("#reportingArea");
+
+                if(processed.error) {
+                    reporting.innerHTML = processed.error;
+                } else {
+                    reporting.innerHTML = processed.name;
+                }
+            });
+        }
+        function readName(event) {
+            event.preventDefault();
+
+            let element = document.querySelector("#pokemonName");
+
+            fetch("/name/" + element.value)
+            .then((res) => {
+
+                return res.json();
+            })
+            .then((processed) => {
+                let reporting = document.querySelector("#reportingArea");
+
+                if(processed.error) {
+                    reporting.innerHTML = processed.error;
+                } else {
+                    reporting.innerHTML = processed.name;
+                }
+            });
+        }
+
+    </script>
+    <h2>Pokemon ID</h2>
+    <form onsubmit="readID(event)">
+        <input id="pokemonId" type="text">
+        <button>Submit</button>
+    </form>
+    <hr>
+    <h2>Pokemon Name</h2>
+    <form onsubmit="readName(event)">
+        <input id="pokemonName" type="text">
+        <button>Submit</button>
+    </form>
+    <hr>
+    <h2>Reporting Area</h2>
+    <div id="reportingArea"></div>
+</body>
+</html>
