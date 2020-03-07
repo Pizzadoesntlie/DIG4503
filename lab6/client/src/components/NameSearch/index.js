@@ -19,6 +19,7 @@ class NameSearch extends React.Component {
                 reporting.innerHTML = processed.error;
             } else {
                 reporting.innerHTML = processed.name;
+                console.log(element.value);
             }
         });
         element.value = "";
