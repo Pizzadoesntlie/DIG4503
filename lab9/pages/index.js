@@ -13,13 +13,13 @@ const Home = () => {
       <div>
         <p>
         </p>
-        <Link href="./components/NameComponent">
+        <Link href="../components/NameComponent">
           <a><p>Name</p></a>
         </Link>
-        <Link href="./components/IdComponent">
+        <Link href="../components/IdComponent">
           <a><p>Id</p></a>
         </Link>
-        <Link href="./components/TypeComponent">
+        <Link href="../components/TypeComponent">
           <a><p>Type</p></a>
         </Link>
       </div>
