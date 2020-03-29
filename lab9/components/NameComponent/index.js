@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from "./NameComponents.module.css";
+//mport styles from "./NameComponents.module.css";
 
 class NameSearch extends React.Component {
 
@@ -29,7 +29,7 @@ class NameSearch extends React.Component {
 
     render() {
         return(
-            <>
+           /* <>
             <div>
             <Head>
               <title>This is the name page!</title>
@@ -41,24 +41,24 @@ class NameSearch extends React.Component {
               <Link href="/">
               <a><p className={styles.name}>Home</p></a>
               </Link>
-              <Link href="./IdComponent">
+              <Link href="/IdComponent">
               <a><p className={styles.name}>Id</p></a>
         </Link>
-        <Link href="./TypeComponent">
+        <Link href="/TypeComponent">
         <a><p className={styles.name}>Type</p></a>
         </Link>
             </div>
           </div>
+            </>*/
             <div>
-                <h2>Pokemon Name</h2>
-                <form onSubmit= {this.readName}>
-                    <input id="pokemonName" type="text" />
-                    <button>Submit</button>
-                </form>
-            </div>
+            <h2>Pokemon Name</h2>
+            <form onSubmit= {this.readName}>
+                <input id="pokemonName" type="text" />
+                <button>Submit</button>
+            </form>
             <h2>Reporting</h2>
-        <div id="reportingArea"></div>
-            </>
+    <div id="reportingArea"></div>
+        </div>
         );
     }
 }

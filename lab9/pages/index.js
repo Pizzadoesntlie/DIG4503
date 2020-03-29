@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import NameSearch from './components/NameComponent/';
-import IdSearch from './components/IdComponent/';
-import TypeSearch from './components/TypeComponent/';
+//import Name from './name';
+import NameSearch from '../components/NameComponent';
+import IdSearch from '../components/IdComponent';
+import TypeSearch from '../components/TypeComponent';
 
 const Home = () => {
   return (

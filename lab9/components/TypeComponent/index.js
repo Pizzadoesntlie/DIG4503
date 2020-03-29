@@ -1,16 +1,15 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from "./IdComponents.module.css";
+//import styles from "./TypeComponents.module.css";
 
+class TypeSearch extends React.Component {
 
-class IdSearch extends React.Component {
-
-    readId(event) {
+    readType(event) {
       event.preventDefault();
 
-        let element = document.querySelector("#pokemonId");
+        let element = document.querySelector("#pokemonType");
 
-        fetch("/api/pokemon/id/" + element.value).then((res) => {
+        fetch("/api/pokemon/type/" + element.value).then((res) => {
 
             return res.json();
         })
@@ -27,38 +26,37 @@ class IdSearch extends React.Component {
     }
         render() {
             return (
-                <>
+                /*<>
                 <div>
                 <Head>
-                <title>This is the ID page!</title>
+                <title>This is the Type page!</title>
               </Head>
               <div>
                 <p>
                 </p>
                 <Link href="/">
-                <a><p className={styles.id}>Home</p></a>
+                <a><p className={styles.type}>Home</p></a>
               </Link>
-                <Link href="./NameComponent">
-                <a><p className={styles.id}>Name</p></a>
+                <Link href="/NameComponent">
+                <a><p className={styles.type}>Name</p></a>
                 </Link>
-                <Link href="./TypeComponent">
-                  <a><p className={styles.id}>Type</p></a>
+                <Link href="/IdComponent">
+                <a><p className={styles.type}>Id</p></a>
                 </Link>
               </div>
             </div>
+            </>*/
                 <div>
-                    <h2>Pokemon ID</h2>
-                    <form onSubmit= {this.readId}>
-                        <input id="pokemonId" type="text" />
+                    <h2>Pokemon Type</h2>
+                    <form onSubmit= {this.readType}>
+                        <input id="pokemonType" type="text" />
                         <button>Submit</button>
                     </form>
-                </div>
-                <h2>Reporting</h2>
+                    <h2>Reporting</h2>
         <div id="reportingArea"></div>
-                </>
-                
+                </div>
             );
         }
     }
 
-export default IdSearch;
+export default TypeSearch;
